@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/app_styles.scss";
+@import "assets/plugins/web-fonts/icons.css";
+@import "assets/plugins/web-fonts/font-awesome/font-awesome.min.css";
+@import "assets/plugins/web-fonts/plugin.css";
+@import "assets/css/dark-style.css";
+@import "assets/css/dark-style.scss";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.select {
+    text-transform: none;
+    word-wrap: normal;
+    width: 100%;
+    height: 39px;
+    background-color: #6259CA;
+    color: white;
+}
