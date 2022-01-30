@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { HttpserviceService } from 'src/app/httpservice.service';
 import { PasswordserviceService } from 'src/app/passwordservice.service';
 
 
@@ -14,11 +13,11 @@ import { PasswordserviceService } from 'src/app/passwordservice.service';
 export class SignComponent implements OnInit {
   form: FormGroup;
   username: object
-  constructor(private formBuilder: FormBuilder, private service: HttpserviceService, private router: Router,    public toastr: ToastrService,
+  constructor(private formBuilder: FormBuilder, private router: Router,    public toastr: ToastrService,
     ) {
     this.form = this.formBuilder.group({
-      'email': ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      'password': ['', Validators.compose([
+      'email': ['admin@test.com', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      'password': ['Admin123!', Validators.compose([
         Validators.required, Validators.minLength(8), PasswordserviceService])],
       
     });
@@ -27,7 +26,7 @@ export class SignComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
+    //debugger
       if (this.form.value.email == "admin@test.com" && this.form.value.password == "Admin123!") {
         localStorage.setItem("user", JSON.stringify('admin@test.com'));
         this.toastr.success("Login Success", '', {

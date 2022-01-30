@@ -1,0 +1,184 @@
+<!-- <div class="card card-aside custom-card"> -->
+<div class="modal-header">
+    <label class=" txt tx-24 mg-b-5">Add User</label>
+
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-body">
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <label>First Name
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="text" formControlName="first_name" class="form-control" />
+                            <div class="errors"
+                                *ngIf="loginForm.get('first_name').invalid && (loginForm.get('first_name').touched || loginForm.get('first_name').dirty)">
+
+                                <div *ngIf="loginForm.get('first_name').hasError('required')">
+                                    First Name is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>Last Name
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="text" formControlName="last_name" class="form-control" />
+                            <div class="errors"
+                                *ngIf="loginForm.get('last_name').invalid && (loginForm.get('last_name').touched || loginForm.get('last_name').dirty)">
+
+                                <div *ngIf="loginForm.get('last_name').hasError('required')">
+                                    Last Name is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>User Name
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="text" formControlName="username" class="form-control" />
+                            <div class="errors"
+                                *ngIf="loginForm.get('username').invalid && (loginForm.get('username').touched || loginForm.get('username').dirty)">
+
+                                <div *ngIf="loginForm.get('username').hasError('required')">
+                                    Username is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>Email
+                            <span class="tx-danger">*</span>
+                        </label>
+
+                        <div class="form-group">
+                            <input type="text" formControlName="email" class="form-control"
+                                 />
+                            <div class="errors"
+                                *ngIf="loginForm.get('email').invalid && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+
+                                <div *ngIf="loginForm.get('email').hasError('required')">
+                                    Email is required
+                                </div>
+
+                                <div *ngIf="loginForm.get('email').errors.email">
+                                    This is not a valid Email!!! </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <label>Gender
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group ">
+
+                            <select class="select" formControlName="gender"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.gender.errors }">
+                                <option>Gender</option>
+                                <option *ngFor="let gen of gender">{{gen}}</option>
+                            </select>
+                            <div class="errors"
+                                *ngIf="loginForm.get('gender').invalid && (loginForm.get('gender').touched || loginForm.get('gender').dirty)">
+
+                                <div *ngIf="loginForm.get('gender').hasError('required')">
+                                    Gender is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>city
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="text" formControlName="city" class="form-control" />
+                            <div class="errors"
+                                *ngIf="loginForm.get('city').invalid && (loginForm.get('city').touched || loginForm.get('city').dirty)">
+
+                                <div *ngIf="loginForm.get('city').hasError('required')">
+                                    City is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>Address
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="text" formControlName="address" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.address.errors }" />
+                            <div class="errors"
+                                *ngIf="loginForm.get('address').invalid && (loginForm.get('address').touched || loginForm.get('address').dirty)">
+
+                                <div *ngIf="loginForm.get('address').hasError('required')">
+                                    Address is required
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-sm-12">
+                            <label>Address1
+                            </label>
+                            <div class="form-group">
+                                <input type="text" formControlName="address1" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && loginFormControl.address1.errors }" />
+                               
+                            </div>
+                        </div> -->
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-right m-t-20">
+                        <button type="button" class="btn ripple btn-secondary"
+                            (click)="closeModelBox()">Close</button>&nbsp;
+
+                        <button type="submit" id="system_submit" class="btn btn-primary" [disabled]="!loginForm.valid">Save</button>
+                        <!-- <button type="submit" class="btn btn-primary" (click)="user()"
+                                >Save</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- </div> -->

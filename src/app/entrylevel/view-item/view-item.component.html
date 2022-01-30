@@ -1,0 +1,71 @@
+
+<div class="modal-header">
+    <label>View Customer</label>
+
+</div>
+
+                
+<div class="modal-body">
+                    <table class="table  text-nowrap text-md-nowrap table-striped mg-b-0">
+                    
+                        <tbody >
+                          
+                            <tr >
+                                <td>
+                                    First Name
+                                </td>
+                                <td>
+                                    {{first_name == "" ? 'NA': first_name}}
+                                </td>
+                            </tr> <tr >
+                                <td>
+                                Last Name
+                                </td>
+                                <td>
+                                    {{last_name == "" ? 'NA': last_name}}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                  User
+                                </td>
+                                <td>
+                                    {{username == "" ? 'NA': username}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  Email
+                                </td>
+                                <td>
+                                    {{Email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    City
+                                    </td>
+                                    <td>
+                                       {{city== "" ? 'NA':city}}
+                                    </td>
+                                    </tr>
+                                <tr>
+                                <td>
+                                    Address
+                                    </td>
+                                    <td>
+                                       {{address== "" ? 'NA':address}}
+                                    </td>
+                                    </tr>
+                                  
+                                    
+                        </tbody>
+                    </table>
+                    
+                </div>
+  
+
+<div class="modal-footer">
+    <button type="button" class="btn ripple btn-secondary" (click)="closeModelBox()">Close</button>
+</div>
+
